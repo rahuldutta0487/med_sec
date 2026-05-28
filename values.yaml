@@ -1,0 +1,34 @@
+namespace:
+  name: medicare-ns
+
+replicas: 2
+
+labels:
+  app: med
+
+image:
+  repository: rahuldutta0487/medicare-simple
+  tag: v1
+
+container:
+  name: med-container
+  port: 4000
+
+service:
+  name: med-service
+  port: 4000
+  targetPort: 4000
+  nodePort: 30019
+  type: NodePort
+
+configMap:
+  name: medicare-config
+  data:
+    APP_NAME: medicare-app
+    APP_PORT: "4000"
+
+secret:
+  name: medicare-secret
+  type: Opaque
+  data:
+    MONGODB_URL: bW9uZ29kYjovL21vbmdvZGItc2VydmljZToyNzAxNy9tZWRpY2FyZV9kYg==
