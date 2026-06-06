@@ -59,7 +59,7 @@ service:
 configMap:
   name: med-config
   data:
-    APP_NAME: medicare-app
+    APP_NAME: medicare-app-v2
     APP_PORT: "4000"
     MONGODB_URL: mongodb://mongodb-service:27017/medicare_db
     config.txt: Medicine App Config
